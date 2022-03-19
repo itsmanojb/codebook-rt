@@ -43,7 +43,7 @@
 .client__avatar {
   height: 40px;
   width: 40px;
-  border-radius: 50%;
+  border-radius: 8px;
   background-color: var(--grey-light);
   display: flex;
   align-items: center;

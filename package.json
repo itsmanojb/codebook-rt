@@ -1,10 +1,16 @@
 {
   "name": "codebook-rt",
+  "description": "Notebook for quick code-sharing and realtime collaboration.",
   "version": "0.1.0",
   "private": true,
+  "keywords": ["React", "Socket.io", "NodeJS"],
   "author": {
     "name": "Manoj B",
     "url": "https://manojbarman.in"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsmanojb/codebook-rt.git"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -24,7 +30,7 @@
   },
   "scripts": {
     "start:front": "react-scripts start",
-    "start": "yarn build && yarn server:prod",
+    "start": "npm run build && npm run server:prod",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

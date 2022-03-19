@@ -1,0 +1,113 @@
+.page {
+  display: flex;
+  background-color: var(--page-bg);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.sidebar {
+  min-width: 250px;
+  background-color: var(--grey-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand__name {
+  height: 100px;
+  margin: 0 0 0.5rem;
+  padding-inline: 1rem;
+  border-bottom: 1px solid #333333;
+}
+
+.menu__header {
+  padding: 0.5rem 1rem;
+  color: #eee;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.client__list {
+  overflow-y: auto;
+}
+
+.client {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.client__avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: var(--grey-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1;
+  color: #fff;
+}
+
+.client p {
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.client p span {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--theme-color);
+}
+
+.sessionMenu {
+  margin-top: auto;
+  padding: 1rem;
+}
+
+.sessionMenu__item {
+  padding: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  color: #eee;
+  width: 100%;
+  background-color: var(--grey);
+  border: none;
+  border-radius: 0.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s ease-in;
+  box-shadow: none;
+}
+
+.sessionMenu__item:hover,
+.sessionMenu__item:focus {
+  background-color: var(--grey-light);
+}
+
+.sessionMenu__item:focus {
+  outline-color: var(--grey-light);
+}
+
+.leave__btn {
+  composes: sessionMenu__item;
+  background-color: #9b0b06;
+}
+
+.leave__btn:hover,
+.leave__btn:focus {
+  background-color: #be0902;
+}
+
+.main {
+  flex: 1;
+}

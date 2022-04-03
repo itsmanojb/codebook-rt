@@ -7,6 +7,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.logo__wrapper {
+  width: 100%;
+  max-width: 480px;
+}
+
+.logo {
+  height: 60px;
+  margin-right: auto;
 }
 
 .card {
@@ -69,7 +80,7 @@ input:focus {
   font-size: 16px;
   border: none;
   cursor: pointer;
-  background-color: var(--theme-color);
+  background: var(--gradient);
   color: #fff;
   border-radius: 0.5rem;
   transition: background 0.2s ease-in;

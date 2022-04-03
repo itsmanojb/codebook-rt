@@ -4,9 +4,10 @@
   --grey-light: #2e303e;
 
   --page-bg: var(--grey);
-  --theme-color: #0072ff;
-  --theme-color-dark: #0569e4;
+  --theme-color: #8873f6;
+  --theme-color-dark: #3433eb;
   --error-color: #e40c05;
+  --gradient: linear-gradient(335deg, #3433eb, #8873f6);
 }
 
 *:focus {

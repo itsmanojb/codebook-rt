@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import style from './Home.module.css';
+import logo from '../code-logo.png';
 
 const Home = () => {
   const [notebookId, setNotebookId] = useState('');
@@ -47,6 +48,9 @@ const Home = () => {
 
   return (
     <div className={style.page}>
+      <div className={style.logo__wrapper}>
+        <img src={logo} className={style.logo} alt="logo" />
+      </div>
       <div className={style.card}>
         <div className={style.card__header}></div>
         <div className={style.card__body}>

@@ -10,6 +10,7 @@ import ACTIONS from '../actions';
 import { initSocket } from '../socket';
 import Editor from './Editor';
 import style from './Editor.module.css';
+import logo from '../code-logo.png';
 
 const Client = ({ data: { username, typing } }) => {
   function getInitials(name) {
@@ -42,6 +43,7 @@ const EditorPage = () => {
   const { id } = useParams();
 
   const [clients, setClients] = useState([]);
+  const [clientsShown, setClientsShown] = useState(false);
 
   useEffect(() => {
     const init = async () => {
@@ -132,9 +134,26 @@ const EditorPage = () => {
   return (
     <div className={style.page}>
       <aside className={style.sidebar}>
-        <div className={style.brand__name}></div>
-        <div className={style.menu__header}>Connected</div>
-        <div className={style.client__list}>
+        <div className={style.brand__name}>
+          <img src={logo} alt="logo" />
+          <p>
+            <small>Javascript</small>
+            <span>
+              <em>Code</em>book
+            </span>
+          </p>
+        </div>
+        <div className={style.menu__header}>
+          Connected
+          <span role="button" onClick={() => setClientsShown(!clientsShown)}>
+            {clientsShown ? 'Hide' : 'Show'}
+          </span>
+        </div>
+        <div
+          className={
+            clientsShown ? style.client__list_expanded : style.client__list
+          }
+        >
           {clients.map((client) => (
             <Client key={client.socketId} data={client} />
           ))}

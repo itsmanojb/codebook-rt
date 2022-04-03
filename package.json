@@ -1,16 +1,16 @@
 {
-  "name": "codebook-rt",
-  "description": "Notebook for quick code-sharing and realtime collaboration.",
+  "name": "js-codebook",
+  "description": "Javascript realtime notebook for quick code-sharing and invigilation",
   "version": "0.1.0",
   "private": true,
-  "keywords": ["React", "Socket.io", "NodeJS"],
+  "keywords": [
+    "React",
+    "Socket.io",
+    "NodeJS"
+  ],
   "author": {
     "name": "Manoj B",
     "url": "https://manojbarman.in"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/itsmanojb/codebook-rt.git"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",

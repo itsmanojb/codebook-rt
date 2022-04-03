@@ -14,21 +14,55 @@
 }
 
 .brand__name {
-  height: 100px;
-  margin: 0 0 0.5rem;
+  padding: 0.5rem 0;
   padding-inline: 1rem;
   border-bottom: 1px solid #333333;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  font-weight: 600;
+}
+
+.brand__name img {
+  height: 60px;
+}
+
+.brand__name p {
+  margin: 0;
+  line-height: 1;
+}
+
+.brand__name p small {
+  display: block;
+  padding: 4px 0;
+  color: #aaa;
+}
+
+.brand__name p span {
+  font-size: 20px;
+  color: #eee;
+}
+
+.brand__name p span em {
+  font-style: normal;
+  color: var(--theme-color);
 }
 
 .menu__header {
   padding: 0.5rem 1rem;
-  color: #eee;
+  color: #999;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   font-size: 11px;
+  margin-top: 0.5rem;
 }
 
-.client__list {
+.menu__header span {
+  display: none;
+}
+
+.client__list,
+.client__list_expanded {
   overflow-y: auto;
 }
 
@@ -110,4 +144,78 @@
 
 .main {
   flex: 1;
+}
+
+/* Mobile view */
+
+@media screen and (max-width: 767px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+  }
+
+  .brand__name {
+    height: 60px;
+    grid-column: 1/2;
+  }
+
+  .brand__name img {
+    height: 48px;
+  }
+
+  .brand__name p {
+    display: none;
+  }
+
+  .menu__header {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    margin-top: 0;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+  }
+
+  .menu__header span {
+    display: block;
+    cursor: pointer;
+    color: var(--theme-color);
+    font-weight: 600;
+  }
+
+  .client__list {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    max-height: 0;
+  }
+
+  .client__list_expanded {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    max-height: calc(100vh - 96px);
+  }
+
+  .sessionMenu {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    border-bottom: 1px solid #333333;
+    height: 60px;
+    padding-block: 0;
+  }
+
+  .sessionMenu button {
+    white-space: nowrap;
+    margin: 0;
+    width: auto;
+  }
 }

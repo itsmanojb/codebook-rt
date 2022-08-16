@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import Home from './pages/Home';
-import EditorPage from './pages/EditorPage';
+import { Home, EditorPage } from './components';
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="editor/:id" element={<EditorPage />} />
       </Routes>
-      <Toaster />
+      <Toaster position="bottom-center" />
     </BrowserRouter>
   );
 }

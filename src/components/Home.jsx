@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { v4 as uuid } from 'uuid';
+import { humanReadableIds as hri } from 'human-readable-ids';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import style from './Home.module.css';
@@ -15,7 +15,7 @@ const Home = () => {
 
   const createNewRoom = (e) => {
     e.preventDefault();
-    const id = uuid();
+    const id = hri.random();
     setNotebookId(id);
     toast.success('New notebook has been created');
   };
@@ -97,14 +97,13 @@ const Home = () => {
         <div className={style.card__footer}>
           <p>
             If you like to create a new notebook,{' '}
-            <a
-              href="/#"
+            <button
               className={style.btn__newSession}
               title="Create new notebook"
               onClick={createNewRoom}
             >
               click here
-            </a>{' '}
+            </button>{' '}
           </p>
         </div>
       </div>

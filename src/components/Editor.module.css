@@ -64,6 +64,7 @@
 .client__list,
 .client__list_expanded {
   overflow-y: auto;
+  background-color: var(--grey-dark);
 }
 
 .client {
@@ -144,11 +145,53 @@
 
 .main {
   flex: 1;
+  height: 100vh;
+  display: grid;
+  overflow: hidden;
 }
 
-/* Mobile view */
+.editor {
+  flex: 1;
+  height: calc(100vh - 60px);
+}
 
-@media screen and (max-width: 767px) {
+.console_btns {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-block-start: 1px solid #333333;
+  gap: 10px;
+  height: 60px;
+  z-index: 1;
+}
+
+.status_err {
+  color: #eee;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.status_err span {
+  font-weight: 400;
+}
+
+.run_btn {
+  composes: sessionMenu__item;
+  font-weight: 600;
+  background-image: var(--gradient);
+  width: 100px;
+  margin-bottom: 0;
+}
+
+.run_btn:disabled {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Tablet view */
+
+@media screen and (max-width: 992px) {
   .page {
     flex-direction: column;
   }
@@ -196,8 +239,11 @@
   }
 
   .client__list_expanded {
-    grid-column: 1/3;
-    grid-row: 3/4;
+    position: fixed;
+    top: 96px;
+    width: 100%;
+    left: 0;
+    z-index: 1;
     max-height: calc(100vh - 96px);
   }
 
@@ -218,4 +264,15 @@
     margin: 0;
     width: auto;
   }
+
+  .main {
+    height: calc(100vh - 100px);
+  }
+
+  .editor {
+    height: calc(100vh - 156px);
+    overflow: auto;
+  }
 }
+
+/* Mobile view */

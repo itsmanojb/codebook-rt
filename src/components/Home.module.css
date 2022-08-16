@@ -112,6 +112,8 @@ input:focus {
   text-decoration: none;
   border: 1px solid transparent;
   transition: background 0.2s ease-in;
+  background: transparent;
+  font-size: 15px;
 }
 
 .btn__newSession:hover {

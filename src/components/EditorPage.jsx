@@ -43,6 +43,7 @@ const EditorPage = () => {
   const { id } = useParams();
 
   const [clients, setClients] = useState([]);
+  const [error, setError] = useState('');
   const [clientsShown, setClientsShown] = useState(false);
 
   useEffect(() => {
@@ -123,6 +124,19 @@ const EditorPage = () => {
     }
   }
 
+  const runCode = () => {
+    try {
+      console.clear();
+      eval(codeRef.current);
+      toast.success('Code compiled successfully');
+      setError();
+    } catch (error) {
+      console.log('error', error);
+      toast.error(error);
+      setError(error);
+    }
+  };
+
   function endSession() {
     navigate('/');
   }
@@ -181,6 +195,14 @@ const EditorPage = () => {
           roomId={id}
           onCodeChange={(code) => (codeRef.current = code)}
         />
+        <div className={style['console_btns']}>
+          <span className={error && style['status_err']}>
+            {error?.name} <span>: {error?.message}</span>{' '}
+          </span>
+          <button onClick={runCode} className={style['run_btn']}>
+            Run
+          </button>
+        </div>
       </main>
     </div>
   );

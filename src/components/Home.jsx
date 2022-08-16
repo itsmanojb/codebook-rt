@@ -97,14 +97,13 @@ const Home = () => {
         <div className={style.card__footer}>
           <p>
             If you like to create a new notebook,{' '}
-            <a
-              href="/#"
+            <button
               className={style.btn__newSession}
               title="Create new notebook"
               onClick={createNewRoom}
             >
               click here
-            </a>{' '}
+            </button>{' '}
           </p>
         </div>
       </div>

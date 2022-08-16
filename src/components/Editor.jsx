@@ -6,6 +6,7 @@ import 'codemirror/mode/javascript/javascript';
 import 'codemirror/addon/edit/closetag';
 import 'codemirror/addon/edit/closebrackets';
 import ACTIONS from '../actions';
+import styles from './Editor.module.css';
 
 const Editor = ({ roomId, socketRef, onCodeChange }) => {
   const editorRef = useRef(null);
@@ -62,7 +63,11 @@ const Editor = ({ roomId, socketRef, onCodeChange }) => {
     };
   }, [socketRef.current]);
 
-  return <textarea id="codezone"></textarea>;
+  return (
+    <div className={styles['editor']}>
+      <textarea id="codezone"></textarea>
+    </div>
+  );
 };
 
 export default Editor;
